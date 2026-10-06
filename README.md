@@ -95,3 +95,13 @@ ols-fs-007-fileconverter/
 - [Entscheidungen](docs/decisions.md)
 - [Standards](docs/standards.md)
 - [Learnings](docs/learnings.md)
+
+## install
+
+npx create-next-app@latest mein-fullstack-app --typescript
+
+
+## start
+
+cd mein-fullstack-app
+npm run dev
