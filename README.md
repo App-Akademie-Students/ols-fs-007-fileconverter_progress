@@ -5,11 +5,11 @@ Eine Full-Stack-Anwendung zum Konvertieren strukturierter Dateien.
 Benutzer können eine Datei hochladen und ein Zielformat auswählen.
 Die Konvertierung erfolgt serverseitig.
 
-## Geplante Formate
+## Formate
 
-- CSV
-- JSON
-- XML
+- CSV (MVP)
+- JSON (MVP)
+- XML (später)
 
 ## Tech Stack
 
@@ -54,6 +54,8 @@ Vor der Implementierung werden:
 | `CLAUDE.md` | Arbeitsanweisung für Claude | Knowledge Priming / Design-First |
 | `requirements.md` | Fachliche Anforderungen und Scope | Design-First |
 | `architecture.md` | Komponenten, Verantwortlichkeiten, Patterns | Design-First |
+| `class-diagram.md` | Minimales Klassendiagramm der Kernstruktur | Design-First |
+| `implementation-plan.md` | Ordnerstruktur, Umsetzungsreihenfolge, Teststrategie | Design-First |
 | `standards.md` | Coding- und Architekturregeln | Encoding Team Standards |
 | `decisions.md` | getroffene Entscheidungen mit Begründung | Context Anchoring |
 | `learnings.md` | Was hat mit AI gut/schlecht funktioniert? | Feedback Flywheel |
@@ -68,40 +70,31 @@ ols-fs-007-fileconverter/
 └── docs/
     ├── requirements.md
     ├── architecture.md
+    ├── class-diagram.md
     ├── decisions.md
+    ├── implementation-plan.md
     ├── standards.md
     └── learnings.md
-
-
-## Info
-* Die Dateien haben dabei bewusst unterschiedliche Aufgaben:
-
-| Datei | Zweck | Fowler-Pattern |
-|---|---|---|
-| `README.md` | Was ist das Projekt, was soll es können? | Knowledge Priming |
-| `CLAUDE.md` | Arbeitsanweisung für Claude | Knowledge Priming / Design-First |
-| `requirements.md` | Fachliche Anforderungen und Scope | Design-First |
-| `architecture.md` | Komponenten, Verantwortlichkeiten, Patterns | Design-First |
-| `standards.md` | Coding- und Architekturregeln | Encoding Team Standards |
-| `decisions.md` | getroffene Entscheidungen mit Begründung | Context Anchoring |
-| `learnings.md` | Was hat mit AI gut/schlecht funktioniert? | Feedback Flywheel |
-
 
 
 ## Docs
 
 - [Anforderungen](docs/requirements.md)
 - [Architektur](docs/architecture.md)
+- [Klassendiagramm](docs/class-diagram.md)
 - [Entscheidungen](docs/decisions.md)
+- [Umsetzungsplan](docs/implementation-plan.md)
 - [Standards](docs/standards.md)
 - [Learnings](docs/learnings.md)
 
-## install
+## Installation
 
-npx create-next-app@latest mein-fullstack-app --typescript
+```
+npm install
+```
 
+## Start
 
-## start
-
-cd mein-fullstack-app
+```
 npm run dev
+```

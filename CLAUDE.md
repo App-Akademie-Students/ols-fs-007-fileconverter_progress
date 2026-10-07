@@ -9,6 +9,7 @@ Lies vor jeder größeren Änderung zuerst:
 3. docs/architecture.md
 4. docs/decisions.md
 5. docs/standards.md
+6. docs/learnings.md
 
 
 
@@ -22,10 +23,10 @@ Dieses Projekt folgt einem Design-First-Ansatz
 4. nenne Vor-und Nachteile
 5. empfehle eine Lösung
 
-Erzeuge erst Code, wenn die Disignentscheidung getroffen wurde
+Erzeuge erst Code, wenn die Designentscheidung getroffen wurde
 
 
-## Architekktur
+## Architektur
 
 Die Anwendung soll insbesondere folgende Patterns demonstrieren
 
@@ -40,7 +41,7 @@ Begründe immer, welches Problem mit dem Pattern gelöst wurde
 
 Bestehende Architekturentscheidungen nicht stillschweigend verändern
 
-## Qulität
+## Qualität
 
 Halte dich an die Regeln in:
 docs/standards.md
