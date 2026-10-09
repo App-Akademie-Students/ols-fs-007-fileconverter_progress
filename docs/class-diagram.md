@@ -8,8 +8,17 @@ classDiagram
     direction TB
 
     class CompositionRoot
-    class ConversionService
-    class ConverterFactory
+    class ConversionService {
+        convert(fileName, content, targetFormat) result
+    }
+    class FormatDetector {
+        detect(fileName) Format
+    }
+    class ConverterFactory {
+        register(source, target, creator)
+        create(source, target) ConversionStrategy
+        getTargetsFor(source) Format[]
+    }
     class ConversionStrategy {
         <<interface>>
         convert(input) string
@@ -17,8 +26,9 @@ classDiagram
     class CsvToJsonStrategy
     class JsonToCsvStrategy
 
-    CompositionRoot --> ConversionService : erzeugt, injiziert Factory
+    CompositionRoot --> ConversionService : erzeugt, injiziert Detector und Factory
     CompositionRoot --> ConverterFactory : registriert Erzeuger
+    ConversionService --> FormatDetector : nutzt
     ConversionService --> ConverterFactory : nutzt
     ConverterFactory --> ConversionStrategy : erzeugt
     ConversionStrategy <|-- CsvToJsonStrategy
@@ -27,6 +37,6 @@ classDiagram
 
 - **Strategy:** `ConversionStrategy` mit zwei konkreten Richtungen.
 - **Factory:** `ConverterFactory` erzeugt die Strategy für (Quelle, Ziel) aus registrierten Erzeugern.
-- **DI:** Die `CompositionRoot` verdrahtet alles; `ConversionService` bekommt die Factory per Konstruktor.
+- **DI:** Die `CompositionRoot` verdrahtet alles; `ConversionService` bekommt Detector und Factory per Konstruktor.
 
-Weggelassen: API-Route, `FormatDetector`, `Format`, Domain-Fehler.
+Weggelassen: API-Route, `Format`, Domain-Fehler.
